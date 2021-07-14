@@ -1,0 +1,108 @@
+:root {
+  /* color */
+  --color-black: #3f454d;
+  --color-white: #ffffff;
+  --color-blue: #3b88c3;
+  --color-yellow: #fbbe28;
+  --color-pink: #fd7f84;
+  --color-light-grey: #dfdfdf;
+
+  /*size*/
+  --size-button: 60px;
+  --font-size:18px;
+  --base-space:8px;
+  --size-border:4px;
+  --size-thumbnail:50px;
+
+  /*annimation*/
+  --animation-duration: 300ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.logo{
+  /*로고가 클릭되는 것임을 알려주기 위한 커서 표시 설정*/
+  cursor: pointer;
+  /*transform 효과를 smooth하게*/
+  transition: transform var(--animation-duration) ease;
+}
+
+/*마우스가 올라왔을 때의 이벤트*/
+.btn:hover,
+.logo:hover{
+  transform: scale(1.1);
+}
+
+.buttons{
+  /*버튼들 정렬을 위한 container 속성 꾸미기*/
+  display: flex;
+  align-items: center;
+}
+
+.btn{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform var(--animation-duration) ease;
+  margin-right: var(--base-space);
+}
+
+.imgBtn{
+  width:var(--size-button);
+  height: var(--size-button);
+}
+
+.colorBtn{
+  font-size: var(--font-size);
+  padding: calc(var(--base-space)*2);
+  border-radius: var(--size-border);
+}
+
+.blue{
+  background-color: #3b88c3;
+}
+.yellow{
+  background-color: #fbbe28;
+}
+.pink{
+  background-color: #fd7f84;
+}
+
+.items{
+  background-color: var(--color-white);
+  width: 60%;
+  height: 60%;
+  list-style:none;
+  padding-left: 0;
+  overflow-y: scroll;
+}
+
+.item{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding :var(--base-space);
+  margin-bottom: var(--base-space);
+}
+
+.item_thumbnail{
+  width: var(--size-thumbnail);
+  height: var(--size-thumbnail);
+}
+
+.item_description{
+  margin-left: var(--base-space);
+  font-size: var(--font-size);
+}
